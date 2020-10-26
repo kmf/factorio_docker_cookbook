@@ -3,14 +3,14 @@
 # The InSpec reference, with examples and extensive documentation, can be
 # found at https://docs.chef.io/inspec/resources/
 
-unless os.windows?
-  # This is an example test, replace with your own test.
-  describe user('root'), :skip do
-    it { should exist }
-  end
+describe file('/opt/factorio') do
+  it { should exist }
+  it { should be_owned_by '845' }
+  its('mode') { should cmp '00755' }
 end
 
-# This is an example test, replace it with your own test.
-describe port(80), :skip do
-  it { should_not be_listening }
+describe docker_container(name: 'factorio') do
+  its('repo') { should eq 'factoriotools' }
+  its('tag') { should eq 'stable' }
+  its('ports') { should eq '0.0.0.0:27015->27015/tcp' }
 end
