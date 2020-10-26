@@ -5,12 +5,11 @@
 
 describe file('/opt/factorio') do
   it { should exist }
-  it { should be_owned_by '845' }
   its('mode') { should cmp '00755' }
 end
 
 describe docker_container(name: 'factorio') do
-  its('repo') { should eq 'factoriotools' }
+  its('repo') { should eq 'factoriotools/factorio' }
   its('tag') { should eq 'stable' }
-  its('ports') { should eq '0.0.0.0:27015->27015/tcp' }
+  its('ports') { should eq '0.0.0.0:27015->27015/tcp, 0.0.0.0:34197->34197/udp' }
 end
