@@ -2,7 +2,8 @@
 # Cookbook:: factorio_docker_cookbook
 # Recipe:: default
 #
-# Copyright:: 2020, Team Otto, All Rights Reserved.
+# Copyright:: 2020, Team Otto, Apache-2.0
+
 docker_installation 'default'
 
 directory '/opt/factorio' do
