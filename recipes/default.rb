@@ -4,7 +4,7 @@
 #
 # Copyright:: 2020, Team Otto, Apache-2.0
 
-docker_installation 'default'
+docker_installation node['docker']['installation']['type']
 
 directory '/opt/factorio' do
   mode '0755'
@@ -15,7 +15,7 @@ service 'docker' do
   action [ :enable, :start ]
 end
 
-docker_image 'factoriotools/factorio' do
+docker_image node['docker']['image'] do
   tag 'stable'
   action :pull
 end
