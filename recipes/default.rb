@@ -15,14 +15,14 @@ service 'docker' do
   action [ :enable, :start ]
 end
 
-docker_image node['docker']['image'] do
-  tag "#{node['docker']['image']['tag']}"
+docker_image node['docker']['image']['repo'] do
+  tag "#{node['docker']['image']['tag']}" 
   action :pull
 end
 
 docker_container 'factorio' do
-  repo 'factoriotools/factorio'
+  repo node['docker']['image']['repo']
   tag "#{node['docker']['image']['tag']}"
-  port [ "#{node['docker']['port_mapping']}" ]
+  port ['27015:27015/tcp', '34197:34197/udp']
   volumes [ "#{node['docker']['volume_mapping']}" ]
 end
