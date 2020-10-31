@@ -6,7 +6,7 @@
 
 docker_installation node['docker']['installation']['type']
 
-directory '/opt/factorio' do
+directory node do
   mode '0755'
   action :create
 end
@@ -24,5 +24,5 @@ docker_container 'factorio' do
   repo 'factoriotools/factorio'
   tag 'stable'
   port ['27015:27015/tcp', '34197:34197/udp']
-  volumes [ '/opt/factorio:/factorio' ]
+  volumes [ "#{node['docker']['volume_mapping']}" ]
 end
