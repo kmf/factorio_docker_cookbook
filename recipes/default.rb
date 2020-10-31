@@ -27,7 +27,11 @@ docker_container 'factorio' do
   volumes [ "#{node['docker']['volume_mapping']}" ]
 end
 
-template "#{node['docker']['directory']}/config/server-adminlist.json" do
+directory "#{node['host']['directory']}/config" do
+  action :create
+end
+
+template "#{node['host']['directory']}/config/server-adminlist.json" do
   source 'server-adminlist.json.erb'
   action :create
 end
