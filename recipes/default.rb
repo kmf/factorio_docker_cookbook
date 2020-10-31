@@ -16,13 +16,13 @@ service 'docker' do
 end
 
 docker_image node['docker']['image'] do
-  tag 'stable'
+  tag "#{node['docker']['image']['tag']}"
   action :pull
 end
 
 docker_container 'factorio' do
   repo 'factoriotools/factorio'
-  tag 'stable'
-  port ['27015:27015/tcp', '34197:34197/udp']
+  tag "#{node['docker']['image']['tag']}"
+  port [ "#{node['docker']['port_mapping']}" ]
   volumes [ "#{node['docker']['volume_mapping']}" ]
 end
