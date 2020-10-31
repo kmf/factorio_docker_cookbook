@@ -27,14 +27,22 @@ docker_container 'factorio' do
   volumes [ "#{node['docker']['volume_mapping']}" ]
 end
 
-template "#{node['docker']['directory']}/config/server-settings.json" do
-  source 'server-settings.json.erb'
-  action :create
-end
-
 template "#{node['docker']['directory']}/config/server-adminlist.json" do
   source 'server-adminlist.json.erb'
   action :create
 end
 
-#map-gen-settings.json  map-settings.json  rconpw  server-settings.json
+#template "#{node['docker']['directory']}/config/server-settings.json" do
+#  source 'server-settings.json.erb'
+#  action :create
+#end
+
+#template "#{node['docker']['directory']}/config/map-gen-settings.json" do
+#  source 'map-gen-settings.json.erb'
+#  action :create
+#end
+
+#template "#{node['docker']['directory']}/config/map-gen-settings.json" do
+#  source 'map-gen-settings.json.erb'
+#  action :create
+#end
