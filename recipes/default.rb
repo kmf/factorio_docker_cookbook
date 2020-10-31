@@ -6,7 +6,7 @@
 
 docker_installation node['docker']['installation']['type']
 
-directory '/opt/factorio' do
+directory node do
   mode '0755'
   action :create
 end
@@ -15,14 +15,14 @@ service 'docker' do
   action [ :enable, :start ]
 end
 
-docker_image node['docker']['image'] do
-  tag 'stable'
+docker_image node['docker']['image']['repo'] do
+  tag "#{node['docker']['image']['tag']}" 
   action :pull
 end
 
 docker_container 'factorio' do
-  repo 'factoriotools/factorio'
-  tag 'stable'
+  repo node['docker']['image']['repo']
+  tag "#{node['docker']['image']['tag']}"
   port ['27015:27015/tcp', '34197:34197/udp']
-  volumes [ '/opt/factorio:/factorio' ]
+  volumes [ "#{node['docker']['volume_mapping']}" ]
 end
