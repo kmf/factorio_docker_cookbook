@@ -9,7 +9,6 @@ default['docker']['image']['repo'] = 'factoriotools/factorio'
 default['docker']['directory'] = '/factorio'
 default['docker']['tcp_port'] = '27015'
 default['docker']['udp_port'] = '34197'
-default['docker']['repo'] = 
 default['docker']['image']['tag'] = 'stable'
 
 default['host']['tcp_port'] = '27015'
