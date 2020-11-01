@@ -26,3 +26,27 @@ docker_container 'factorio' do
   port ['27015:27015/tcp', '34197:34197/udp']
   volumes [ "#{node['docker']['volume_mapping']}" ]
 end
+
+directory "#{node['host']['directory']}/config" do
+  action :create
+end
+
+template "#{node['host']['directory']}/config/server-adminlist.json" do
+  source 'server-adminlist.json.erb'
+  action :create
+end
+
+#template "#{node['docker']['directory']}/config/server-settings.json" do
+#  source 'server-settings.json.erb'
+#  action :create
+#end
+
+#template "#{node['docker']['directory']}/config/map-gen-settings.json" do
+#  source 'map-gen-settings.json.erb'
+#  action :create
+#end
+
+#template "#{node['docker']['directory']}/config/map-gen-settings.json" do
+#  source 'map-gen-settings.json.erb'
+#  action :create
+#end
