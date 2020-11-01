@@ -1,10 +1,8 @@
 # factorio_docker_cookbook
 
-TODO: Enter the cookbook description here.
+This Cookbook deploys a Factorio Server using Docker.
 
 - Add some Screenshots
-- Add a attribute file
-- create templates
 
 ## Customising the Factorio Deployment
 
