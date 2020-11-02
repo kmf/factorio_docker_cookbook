@@ -4,17 +4,10 @@ PreCommit:
     enabled: true
   YamlLint:
     enabled: true
-  Rspec:
-    enabled: true
-    required_executable: 'rspec'
   Cookstyle:
     enabled: true
     required_executable: 'cookstyle'
     command: ["cookstyle"]
-  Delivery:
-    enabled: true
-    required_executable: 'delivery'
-    flags: ['local', 'all']
 CommitMsg:
   HardTabs:
     enabled: true

@@ -16,7 +16,7 @@ service 'docker' do
 end
 
 docker_image node['docker']['image']['repo'] do
-  tag "#{node['docker']['image']['tag']}" 
+  tag "#{node['docker']['image']['tag']}"
   action :pull
 end
 
@@ -36,17 +36,17 @@ template "#{node['host']['directory']}/config/server-adminlist.json" do
   action :create
 end
 
-#template "#{node['docker']['directory']}/config/server-settings.json" do
+# template "#{node['docker']['directory']}/config/server-settings.json" do
 #  source 'server-settings.json.erb'
 #  action :create
-#end
+# end
 
-#template "#{node['docker']['directory']}/config/map-gen-settings.json" do
+# template "#{node['docker']['directory']}/config/map-gen-settings.json" do
 #  source 'map-gen-settings.json.erb'
 #  action :create
-#end
+# end
 
-#template "#{node['docker']['directory']}/config/map-gen-settings.json" do
+# template "#{node['docker']['directory']}/config/map-gen-settings.json" do
 #  source 'map-gen-settings.json.erb'
 #  action :create
-#end
+# end
