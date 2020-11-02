@@ -8,16 +8,6 @@ name: ci
       - master
 
 jobs:
-  delivery:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code
-        uses: actions/checkout@master
-      - name: Run Chef Delivery
-        uses: actionshub/chef-delivery@master
-        env:
-          CHEF_LICENSE: accept-no-persist
-
   yamllint:
     runs-on: ubuntu-latest
     steps:
@@ -35,7 +25,7 @@ jobs:
         uses: actionshub/markdownlint@master
 
   dokken:
-    needs: [mdl, yamllint, delivery]
+    needs: [mdl, yamllint]
     runs-on: ubuntu-latest
     strategy:
       matrix:
