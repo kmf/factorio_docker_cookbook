@@ -6,11 +6,14 @@ This Cookbook deploys a Factorio Server using Docker.
 
 ## Customising the Factorio Deployment
 
-To customise your factorio deployment, you can change options in the `default.rb` in the attributes directory.  Below are some explanations of some things you can customise.
+To customise your factorio deployment, you can change options in the
+`default.rb` in the attributes directory.  Below are some explanations
+of some things you can customise.
 
-### Customise the docker installation type:
+### Customise the docker installation type
 
-Change `default` to the desired installation type. Ordinarily, you would not need to change this at all.
+Change `default` to the desired installation type.
+Ordinarily, you would not need to change this at all.
 
 ```
 default['docker']['installation']['type'] = 'default'
@@ -22,7 +25,7 @@ default['docker']['installation']['type'] = 'default'
 default['docker']['image']['repo'] = 'factoriotools/factorio'
 ```
 
-### This is the directory in the conatiner which will be mapped to host a directory on the host
+### The directory in the container which will be mapped to host
 
 In normal circumstances, you probably should not change this option.
 
@@ -30,19 +33,19 @@ In normal circumstances, you probably should not change this option.
 default['docker']['directory'] = '/factorio'
 ````
 
-### Set this option to change the container tcp port which will be mapped to the host port
+### Set this option for the container TCP port
 
 ````
 default['docker']['tcp_port'] = '27015'
 ````
 
-### Set this option to change the container UDP port which will be mapped to the host port
+### Set this option for thecontainer UDP port
 
 ````
 default['docker']['udp_port'] = '34197'
 ````
 
-### Set this option to alter which docker image is used, is you don't want to use the stable branch
+### Set this option to alter which Docker image is used
 
 ````
 default['docker']['image']['tag'] = 'stable'
@@ -60,7 +63,7 @@ default['host']['tcp_port'] = '27015'
 default['host']['udp_port'] = '34197'
 ````
 
-### Set this to change where persistent data should be stored on the host machine.
+### Set this to change where persistent data should be stored on the host machine
 
 ````
 default['host']['directory'] = '/opt/factorio'
