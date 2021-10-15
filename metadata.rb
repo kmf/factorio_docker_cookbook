@@ -3,8 +3,8 @@ maintainer 'Team Otto'
 maintainer_email 'otto@obsidian.co.za'
 license 'Apache-2.0'
 description 'Installs/Configures factorio_docker_cookbook'
-version '0.1.1'
-chef_version '>= 15.0'
+version '0.2.0'
+chef_version '>= 17.0'
 depends 'docker'
 
 # The `issues_url` points to the location where issues for this cookbook are

@@ -2,7 +2,7 @@
 # Cookbook:: factorio_docker_cookbook
 # Recipe:: default
 #
-# Copyright:: 2020, Team Otto, Apache-2.0
+# Copyright:: 2021, Team Otto, Apache-2.0
 
 docker_installation node['docker']['installation']['type']
 

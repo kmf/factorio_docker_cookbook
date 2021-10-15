@@ -2,7 +2,7 @@
 # Cookbook:: factorio_docker_cookbook
 # Attributes:: default
 #
-# Copyright:: 2020, Team Otto, Apache-2.0
+# Copyright:: 2021, Team Otto, Apache-2.0
 
 default['docker']['installation']['type'] = 'default'
 default['docker']['image']['repo'] = 'factoriotools/factorio'
@@ -23,3 +23,4 @@ default['docker']['volume_mapping'] = "#{node['host']['directory']}:#{node['dock
 default['factorio']['admin1'] = 'kmf'
 default['factorio']['admin2'] = 'calwynb'
 default['factorio']['admin3'] = 'unlaudable'
+default['factorio']['admin4'] = 'hemorrhage'
