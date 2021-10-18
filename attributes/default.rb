@@ -1,4 +1,3 @@
-#
 # Cookbook:: factorio_docker_cookbook
 # Attributes:: default
 #
